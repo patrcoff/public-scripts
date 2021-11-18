@@ -1,3 +1,6 @@
+#this is the wrong file, where is the finished script?
+#this was one of my first Python scripts in modern times while I was starting to think about a career move...I know it's not good but it was a start and it made me happy
+#well, the finished version did but I can't seem to find it lol
 arr=[[None for y in range(9)]
            for x in range(9)]
 
