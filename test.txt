@@ -1,3 +1,4 @@
 Why is it not pushing?
 Is it an atom issue?
 Is it a login issue?
+OK, needed to set commit name and email and then commit tab is visible - atom just wasn't giving any useful error or feedback from using the command pallet push command...
