@@ -1,6 +1,3 @@
-#EXAMPLE LINES
-#H,DELIVERY,SAMPLING,289240-1,CORK,2021-11-03,1380,2021-11-03 00:00,2021-11-06 24:00,,TT600,Thurles Tiles Ltd,1 Ikerrin Road,Thurles,Co Tipperary ,Thurles,,E41 P6P0,IE,00353 50428601,info@thurlestiles.ie,Thurles Tiles Ltd,1 Ikerrin Road,Thurles,Co Tipperary ,Co Tipperary ,,E41 P6P0,IE,,,,info@thurlestiles.ie,FLANAGAN_IRELAND,,,,1,0,0,0,
-#D,289240-1,,,SAMPLEBOARDLAM,DESPATCH - NA - SAMPLING - SAMPLE BOARD LAMINATE,8.00,5.6,0
 
 from csv import *
 import glob
