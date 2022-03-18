@@ -200,7 +200,13 @@ def mayo():
             tk.messagebox.showinfo(title="Error!",message="Please check source file for errors: route not recognised: "+i[0][4])
             #sys.exit() #maybe not the best way to abort in gui mode?
             return None
-    with open(filename,'w') as file: #w means overwrite file
+
+    out_file = fd.asksaveasfilename(
+        title='Output filename:',
+        initialfile=file,
+        defaultextension='.csv', filetypes=[("csv file", '*.csv')])
+
+    with open(out_file,'w') as file: #w means overwrite file
             for i in range(len(output)): #i in range (0 to lenght of array) not including last number i.e. range(10) = 0-9
                 if i < len(output)-1: #if not last entry in list
                     file.writelines(output[i]+'\n') #write it with a \n
