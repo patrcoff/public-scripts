@@ -12,6 +12,7 @@ import pgeocode
 #------------------------------------------------------------------------------
 from csv import *
 import sys
+from os.path import exists
 
 # You have to use the tkinterDnD.Tk object for super easy initialization,
 # and to be able to use the main window as a dnd widget
@@ -151,6 +152,21 @@ def mayo():
     global file
     filename = file
     routes = ['CORK','COURIER','DONEGAL','DUBLIN','GALWAY','LIMERICK','Londonderry','MAYO/SLIGO','WATERFORD','WEXFORD','OMAGH', 'SPECIAL']#I should move this to a separate json file which Pual could then edit, so he won't have to edit source and recompile/install python even
+    if exists("./routes_override.txt"):
+        with open("./routes_override.txt", 'r+') as override:
+            lines = override.readlines()
+            if len(lines) > 1:
+                tk.messagebox.showinfo(title="Error",message="Routes override file contains more than one row!")
+                return None
+            elif len(lines) == 1:
+                for el in lines[0].split(','):
+                    if el not in routes:
+                        routes.append(el)
+            else:#must be Empty
+                tk.messagebox.showinfo(title="Info",message="Routes override file is empty!")
+        #tk.messagebox.showinfo(title="Debug",message="This file exists!")
+    else:
+        tk.messagebox.showinfo(title="Info",message="Proceeding with default routes.")
     #add json file for editing routes post compilation
     orders = []
     line_string = ''
@@ -248,8 +264,8 @@ lbl3 = ttk.Label(root,text=str("Orders:"))
 separator = tk.Canvas(root)
 B_SelectFile.grid(columnspan=3,row=0,padx=10,pady=10)
 lbl2.grid(columnspan=3,row=2,padx=10,pady=10)
-separator.grid(row=3,column=1,rowspan=7)
-separator.create_line(200,0,200,1000, fill="red", width=5)
+separator.grid(row=2,column=1,rowspan=9)
+separator.create_line(200,0,200,1500, fill="red", width=5)
 #row 3 add labels for the two workflows
 lbl_wf_left = tk.Label(root,text="For general filtering:")
 lbl_wf_right = tk.Label(root,text="For Mayo/Sligo extract:")
@@ -262,5 +278,8 @@ B_AddOrder.grid(column=0,row=6,padx=10,pady=10,sticky=tk.W,columnspan=1)
 lbl3.grid(column=0,row=7,padx=10,pady=10,sticky=tk.W,columnspan=1)
 B_ClearOrder.grid(column=0,row=8,padx=10,pady=10,sticky=tk.W,columnspan=1)
 B_SaveFile.grid(column=0,row=9,padx=10,pady=10,sticky=tk.W,columnspan=1)
+lbl_routes = tk.Label(root,justify=tk.RIGHT,text="To override routes:\n\nEnter additional routes as comma-separated\nstrings, into file: \'routes_override.txt\' \nlocated in same directory as exe file.")
 B_Mayo.grid(column=2,row=4,padx=10,pady=10,sticky=tk.E,columnspan=1)
+lbl_routes.grid(column=2,row=9,padx=10,pady=10)
+
 root.mainloop()
