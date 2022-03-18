@@ -53,6 +53,21 @@ def addOrder():
         selected_orders.append(ord)
         lbl3.config(text = "Orders:" + str(selected_orders))
         input_order.delete(0,'end')#1.0,tk.END
+    elif len(ord) > 8 and "Failed to process Job" in ord: #added code to allow copy paste of podfather failure email text to add orders - want to then autoremove BT24... false positives
+        try:
+            txt_array = ord.split("Failed to process Job with reference: ")
+            for i in txt_array[1:]:
+                #print(i.strip().split(".")[0].strip('"'))
+                if "Customer eircode 'BT24 7NL' is in an invalid format" not in i.strip().split(".")[1]:
+                    selected_orders.append(i.strip().split(".")[0].strip('"'))
+            lbl3.config(text = "Orders:" + str(selected_orders))
+            input_order.delete(0,'end')#1.0,tk.END
+            #here we will try and add the orders in an array
+        except:
+            input_order.delete(0,'end')#1.0,tk.END
+            tk.messagebox.showinfo(title="Error!",message="You entered invalid text!")
+            return None
+            #with an except clause in case it goes wrong
     else:
         tk.messagebox.showinfo(title="Error!",message="You entered an invalid or duplicate order number!")
 def processFile():
