@@ -159,7 +159,8 @@ def mayo():
     if filename[-3:] != 'csv' and filename[-3:] != 'CSV':
         #print("You crazy fool! I won't let you!")
         tk.messagebox.showinfo(title="Error!",message="This file doesn't quite look right, try again!")
-        sys.exit()
+        #sys.exit()
+        return None
     with open(filename, 'r+') as read_obj:#file opened for reading
         csv_reader = reader(read_obj)
         for row in csv_reader:
@@ -173,8 +174,8 @@ def mayo():
                 orders[-1].append(row) #to here, creates a list of lists of lists -> list of orders containing, list of rows (H and D(s)), each containing list of fields
             elif row[0] != 'H' and row[0] != 'D' and len(row) > 0:
                 tk.messagebox.showinfo(title="Error!",message="This file doesn't quite look right, try again!")
-                sys.exit()
-
+                #sys.exit()
+                return None
     output = [] #new array for storing lines to be written to file
     for i in orders:
         #print(i,'\n')
@@ -197,8 +198,8 @@ def mayo():
             #input("Press enter to exit.")
             #quit() #this doesn't work when converted to exe file???
             tk.messagebox.showinfo(title="Error!",message="Please check source file for errors: route not recognised: "+i[0][4])
-            sys.exit() #maybe not the best way to abort in gui mode?
-
+            #sys.exit() #maybe not the best way to abort in gui mode?
+            return None
     with open(filename,'w') as file: #w means overwrite file
             for i in range(len(output)): #i in range (0 to lenght of array) not including last number i.e. range(10) = 0-9
                 if i < len(output)-1: #if not last entry in list
