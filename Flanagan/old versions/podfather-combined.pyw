@@ -1,4 +1,6 @@
 #to do:
+#add clear button for orders field (so you can perform action on another file without closing and reoping)
+#fix layout into columns frames etc
 #preview pane? (separate processing of file and writing of file into two parts)
 #gui editing of fields?
 import tkinter as tk
@@ -60,6 +62,7 @@ def processFile():
     if not exists(file):
         tk.messagebox.showinfo(title="Error!",message="Please select an input file!")
         return None
+    #else:
     filename = file
     orders = []
     line_string = ''
@@ -175,7 +178,7 @@ def mayo():
     #tk.messagebox.showinfo(title="Please note:",message="")
     if filename[-3:] != 'csv' and filename[-3:] != 'CSV':
         #print("You crazy fool! I won't let you!")
-        tk.messagebox.showinfo(title="Error!",message="Source file doesn't quite look right, not a \'csv\' file - try again!")
+        tk.messagebox.showinfo(title="Error!",message="This file doesn't quite look right, try again!")
         #sys.exit()
         return None
     with open(filename, 'r+') as read_obj:#file opened for reading
@@ -190,7 +193,7 @@ def mayo():
             elif row[0] == 'D':
                 orders[-1].append(row) #to here, creates a list of lists of lists -> list of orders containing, list of rows (H and D(s)), each containing list of fields
             elif row[0] != 'H' and row[0] != 'D' and len(row) > 0:
-                tk.messagebox.showinfo(title="Error!",message="Source file doesn't quite look right, some lines don't start with \'H\' or \'D\' - try again!")
+                tk.messagebox.showinfo(title="Error!",message="This file doesn't quite look right, try again!")
                 #sys.exit()
                 return None
     output = [] #new array for storing lines to be written to file
@@ -249,8 +252,8 @@ lbl1 = ttk.Label(root,text="Enter order numbers to extract:\n(One at a time)")#,
 input_order = tk.Entry(root)
 input_order.bind('<Return>',order_enter)
 B_SelectFile = ttk.Button(root, text ="Select File", command = selectFile)
-B_SaveFile = ttk.Button(root, text ="Extract Selected Orders", command = processFile)
-B_Mayo = ttk.Button(root, text ="Extract Mayo/Sligo Runs", command = mayo)
+B_SaveFile = ttk.Button(root, text ="Filter Selected Orders", command = processFile)
+B_Mayo = ttk.Button(root, text ="Filter Mayo/Sligo Runs", command = mayo)
 B_AddOrder = ttk.Button(root, text ="Add Order No.", command = addOrder)
 B_ClearOrder = ttk.Button(root, text ="Clear Orders", command = clear_orders)
 lbl2 = ttk.Label(root,text="File selected:")
@@ -268,8 +271,8 @@ lbl2.grid(columnspan=3,row=2,padx=10,pady=10)
 separator.grid(row=2,column=1,rowspan=9)
 separator.create_line(200,0,200,1500, fill="red", width=5)
 #row 3 add labels for the two workflows
-lbl_wf_left = tk.Label(root,text="General filtering:")
-lbl_wf_right = tk.Label(root,text="Mayo/Sligo extract:")
+lbl_wf_left = tk.Label(root,text="For general filtering:")
+lbl_wf_right = tk.Label(root,text="For Mayo/Sligo extract:")
 lbl_wf_left.grid(row=3,column=0,sticky=tk.W,columnspan=1)
 lbl_wf_right.grid(row=3,column=2,sticky=tk.E,columnspan=1)
 lbl1.grid(column=0,row=4,padx=10,pady=10,sticky=tk.W,columnspan=1)
