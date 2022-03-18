@@ -16,7 +16,7 @@ import sys
 # You have to use the tkinterDnD.Tk object for super easy initialization,
 # and to be able to use the main window as a dnd widget
 root = tk.Tk()
-root.title("Podfather Mayo/Sligo filter.")
+root.title("Podfather Filter Application")
 #root.geometry('400x200')
 
 file = "Empty"
@@ -226,12 +226,14 @@ def clear_orders():
     lbl3.config(text = "Orders:" + str(selected_orders))
     #input_order.delete(0,'end')#1.0,tk.END
 #------------------------------------------------------------------------------
-lbl1 = ttk.Label(root,text="Enter order number to filter:",width=30)
+
+order_fr = tk.Frame(root)
+lbl1 = ttk.Label(root,text="Enter order numbers to extract:\n(One at a time)")#,width=80)
 input_order = tk.Entry(root)
 input_order.bind('<Return>',order_enter)
 B_SelectFile = ttk.Button(root, text ="Select File", command = selectFile)
-B_SaveFile = ttk.Button(root, text ="Filter", command = processFile)
-B_Mayo = ttk.Button(root, text ="Overwrite Mayo/Sligo File", command = mayo)
+B_SaveFile = ttk.Button(root, text ="Filter Selected Orders", command = processFile)
+B_Mayo = ttk.Button(root, text ="Filter Mayo/Sligo Runs", command = mayo)
 B_AddOrder = ttk.Button(root, text ="Add Order No.", command = addOrder)
 B_ClearOrder = ttk.Button(root, text ="Clear Orders", command = clear_orders)
 lbl2 = ttk.Label(root,text="File selected:")
@@ -242,13 +244,23 @@ lbl3 = ttk.Label(root,text=str("Orders:"))
 #label_2.pack(fill="both", expand=True, padx=10, pady=10)
 #-------------------------------------------------------------------------------
 
-B_SelectFile.pack()
-lbl2.pack()
-lbl1.pack()
-input_order.pack()
-B_AddOrder.pack()
-lbl3.pack()
-B_ClearOrder.pack()
-B_SaveFile.pack()
-B_Mayo.pack()
+#,padx=10,pady=10
+separator = tk.Canvas(root)
+B_SelectFile.grid(columnspan=3,row=0,padx=10,pady=10)
+lbl2.grid(columnspan=3,row=2,padx=10,pady=10)
+separator.grid(row=3,column=1,rowspan=7)
+separator.create_line(200,0,200,1000, fill="red", width=5)
+#row 3 add labels for the two workflows
+lbl_wf_left = tk.Label(root,text="For general filtering:")
+lbl_wf_right = tk.Label(root,text="For Mayo/Sligo extract:")
+lbl_wf_left.grid(row=3,column=0,sticky=tk.W,columnspan=1)
+lbl_wf_right.grid(row=3,column=2,sticky=tk.E,columnspan=1)
+lbl1.grid(column=0,row=4,padx=10,pady=10,sticky=tk.W,columnspan=1)
+#order_fr.grid(column=0,row=5,padx=10,pady=10,sticky=tk.W,columnspan=1)
+input_order.grid(column=0,row=5,padx=10,pady=10,sticky=tk.W,columnspan=1)
+B_AddOrder.grid(column=0,row=6,padx=10,pady=10,sticky=tk.W,columnspan=1)
+lbl3.grid(column=0,row=7,padx=10,pady=10,sticky=tk.W,columnspan=1)
+B_ClearOrder.grid(column=0,row=8,padx=10,pady=10,sticky=tk.W,columnspan=1)
+B_SaveFile.grid(column=0,row=9,padx=10,pady=10,sticky=tk.W,columnspan=1)
+B_Mayo.grid(column=2,row=4,padx=10,pady=10,sticky=tk.E,columnspan=1)
 root.mainloop()
