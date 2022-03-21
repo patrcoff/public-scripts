@@ -1,3 +1,4 @@
+#simple gui automation for running report only accessible via odbc (relies on specific pixel perfect PNGs of the icons and buttons to be clicked)
 import pyautogui
 import time
 from tkinter import Tk
