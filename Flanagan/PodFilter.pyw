@@ -5,6 +5,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
 import pgeocode
+import re
 #------------------------------------------------------------------------------
 #import tkinterDnD  # Importing the tkinterDnD module
 #------------------------------------------------------------------------------
@@ -53,13 +54,16 @@ def addOrder():
         selected_orders.append(ord)
         lbl3.config(text = "Orders:" + str(selected_orders))
         input_order.delete(0,'end')#1.0,tk.END
-    elif len(ord) > 8 and "Failed to process Job" in ord: #added code to allow copy paste of podfather failure email text to add orders - want to then autoremove BT24... false positives
+    elif len(ord) > 8:# and "Failed to process Job" in ord: #added code to allow copy paste of podfather failure email text to add orders - want to then autoremove BT24... false positives
         try:
-            txt_array = ord.split("Failed to process Job with reference: ")
-            for i in txt_array[1:]:
+            txt_array = re.findall(r"\d{6}-\d",ord)
+            for i in txt_array:
+                selected_orders.append(i)
+            #txt_array = ord.split("Failed to process Job with reference: ")
+            #for i in txt_array[1:]:
                 #print(i.strip().split(".")[0].strip('"'))
-                if "Customer eircode 'BT24 7NL' is in an invalid format" not in i.strip().split(".")[1]:
-                    selected_orders.append(i.strip().split(".")[0].strip('"'))
+            #    if "Customer eircode 'BT24 7NL' is in an invalid format" not in i.strip().split(".")[1]:
+            #        selected_orders.append(i.strip().split(".")[0].strip('"'))
             lbl3.config(text = "Orders:" + str(selected_orders))
             input_order.delete(0,'end')#1.0,tk.END
             #here we will try and add the orders in an array
@@ -280,22 +284,22 @@ lbl3 = ttk.Label(root,text=str("Orders:"))
 separator = tk.Canvas(root)
 B_SelectFile.grid(columnspan=3,row=0,padx=10,pady=10)
 lbl2.grid(columnspan=3,row=2,padx=10,pady=10)
-separator.grid(row=2,column=1,rowspan=9)
-separator.create_line(200,0,200,1500, fill="red", width=5)
+separator.grid(row=2,column=1,rowspan=12)
+separator.create_line(200,0,200,2000, fill="red", width=5)
 #row 3 add labels for the two workflows
 lbl_wf_left = tk.Label(root,text="General filtering:")
 lbl_wf_right = tk.Label(root,text="Mayo/Sligo extract:")
-lbl_wf_left.grid(row=3,column=0,sticky=tk.W,columnspan=1)
-lbl_wf_right.grid(row=3,column=2,sticky=tk.E,columnspan=1)
-lbl1.grid(column=0,row=4,padx=10,pady=10,sticky=tk.W,columnspan=1)
+lbl_wf_left.grid(row=4,column=0,sticky=tk.W,columnspan=1)
+lbl_wf_right.grid(row=4,column=2,sticky=tk.E,columnspan=1)
+lbl1.grid(column=0,row=5,padx=10,pady=10,sticky=tk.W,columnspan=1)
 #order_fr.grid(column=0,row=5,padx=10,pady=10,sticky=tk.W,columnspan=1)
-input_order.grid(column=0,row=5,padx=10,pady=10,sticky=tk.W,columnspan=1)
-B_AddOrder.grid(column=0,row=6,padx=10,pady=10,sticky=tk.W,columnspan=1)
-lbl3.grid(column=0,row=7,padx=10,pady=10,sticky=tk.W,columnspan=1)
-B_ClearOrder.grid(column=0,row=8,padx=10,pady=10,sticky=tk.W,columnspan=1)
-B_SaveFile.grid(column=0,row=9,padx=10,pady=10,sticky=tk.W,columnspan=1)
+input_order.grid(column=0,row=6,padx=10,pady=10,sticky=tk.W,columnspan=1)
+B_AddOrder.grid(column=0,row=7,padx=10,pady=10,sticky=tk.W,columnspan=1)
+lbl3.grid(column=0,row=8,padx=10,pady=10,sticky=tk.W,columnspan=1)
+B_ClearOrder.grid(column=0,row=9,padx=10,pady=10,sticky=tk.W,columnspan=1)
+B_SaveFile.grid(column=0,row=10,padx=10,pady=10,sticky=tk.W,columnspan=1)
 lbl_routes = tk.Label(root,justify=tk.RIGHT,text="To override routes:\n\nEnter additional routes as comma-separated\nstrings, into file: \'routes_override.txt\' \nlocated in same directory as exe file.")
-B_Mayo.grid(column=2,row=4,padx=10,pady=10,sticky=tk.E,columnspan=1)
-lbl_routes.grid(column=2,row=9,padx=10,pady=10)
+B_Mayo.grid(column=2,row=5,padx=10,pady=10,sticky=tk.E,columnspan=1)
+lbl_routes.grid(column=2,row=10,padx=10,pady=10)
 
 root.mainloop()
