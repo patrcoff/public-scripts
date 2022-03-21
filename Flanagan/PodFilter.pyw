@@ -4,7 +4,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
-import pgeocode
+import pgeocode# this is causing an issue with paul running the exe (via pyinstaller) - issue with ssl cert expired... only this seems to be importing requests (which fails on the exe on paul's machine)
 import re
 #------------------------------------------------------------------------------
 #import tkinterDnD  # Importing the tkinterDnD module
