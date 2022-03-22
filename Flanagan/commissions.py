@@ -1,8 +1,9 @@
 #to do:
-#create simple gui for users to feel more secure with than cmd (lol)
-#allow user to input month/year for query
-#create query generating function based on user entry
+#DONEcreate simple gui for users to feel more secure with than cmd (lol)
+#DONEallow user to input month/year for query
+#DONEcreate query generating function based on user entry
 #finish accounting for source variances
+#handle exceptions such as file is open etc
 import pandas as pd
 import tkinter as tk
 from tkinter import ttk
