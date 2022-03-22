@@ -65,7 +65,7 @@ def monthWord(month_num):
         return "December"
 
 def process(file,year,month):
-    pb1['value'] = 30
+    #pb1['value'] = 30
     Lyear = str(int(year)-1)
     date, Ldate, YTD, LYTD = generate_dates(year,month)
     print(YTD)
@@ -75,7 +75,7 @@ def process(file,year,month):
     month_year2 = monthWord(month) + " " + Lyear
     try:#haven't fully accounted for all variances between the sheet names and headers yet but rest of code works well so far
         new = pd.read_excel(file,sheet_name="New Customer List")
-        pb1['value'] = 40
+        #pb1['value'] = 40
         #query = "`Inv Date` == [\""+date+"\"]"
         #query2 = "`Inv Date` == [\""+Ldate+"\"]"
         #---------------------------------------
@@ -117,7 +117,7 @@ def process(file,year,month):
                 D = "Doc_Date"
             except:
                 print("Error - sheet not found")
-    pb1['value'] = 50
+    #pb1['value'] = 50
     query = D+" == [\""+date+"\"]"
     query2 = D+" == [\""+Ldate+"\"]"
     #---------------------------------------
@@ -138,7 +138,7 @@ def process(file,year,month):
         query4+="\"] or "
     query4 = query4[:-4] #is this the right index to remove extra " or " string from end?
     print(query4,"Debug2")
-    pb1['value'] = 60
+    #pb1['value'] = 60
     #----------------------------------------------------------------------------------------------------------
 
     piv22 = pd.pivot_table(new.query(query),index=["Item Type",],values=[SV])
@@ -148,7 +148,7 @@ def process(file,year,month):
     Item21 = piv21.rename(columns={SV:month_year2})
     items_month = pd.merge(Item22,Item21,how="outer",on="Item Type").fillna(0)
     print(items_month,"\n\n")
-    pb1['value'] = 70
+    #pb1['value'] = 70
     #----------------------------------------------------------------------------------------------------------
 
     piv22 = pd.pivot_table(new.query(query),index=[CN,],values=[SV])
@@ -158,7 +158,7 @@ def process(file,year,month):
     Cust21 = piv21.rename(columns={SV:month_year2})
     cust_month = pd.merge(Cust22,Cust21,how="outer",on=CN).fillna(0)
     print(cust_month,"\n\n")
-    pb1['value'] = 80
+    #pb1['value'] = 80
     #----------------------------------------------------------------------------------------------------------
 
     piv22 = pd.pivot_table(new.query(query3),index=[CN,],values=[SV])
@@ -168,7 +168,7 @@ def process(file,year,month):
     YTDCust21 = piv21.rename(columns={SV:"2021"})
     cust_ytd = pd.merge(YTDCust22,YTDCust21,how="outer",on=CN).fillna(0)
     print(cust_ytd)
-    pb1['value'] = 90
+    #pb1['value'] = 90
     #----------------------------------------------------------------------------------------------------------
 
     writer = pd.ExcelWriter(fd.asksaveasfilename(title='Output filename:'))
@@ -179,18 +179,20 @@ def process(file,year,month):
     writer.save()
 
     print("Completed!")
-    pb1['value'] = 100
+    #pb1['value'] = 100
 
 def mask():
+    pb1 = ttk.Progressbar(root, orient="horizontal", length=100, mode='indeterminate')
+    pb1.grid(row=3)
     #pb1['value'] = 10
     #get user input
-    pb1.start()
+    pb1.start(5)
     file = fd.askopenfilename(title='Please Select Source File',initialdir='/C:/Users/patrick.coffey/OneDrive - Flanagan Flooring/Documents/')
     year = yearEntry.get()
     print(year)
     month = monthEntry.get()
     print(month)
-    pb1['value'] = 20
+    #pb1['value'] = 20
     process(file,year,month)
     pb1.stop()
 
@@ -211,7 +213,7 @@ monthEntry = tk.Entry(root)
 #
 B_Generate = ttk.Button(root, text ="Generate", command = mask)
 
-pb1 = ttk.Progressbar(root, orient="horizontal", length=100)#, mode='indeterminate'
+
 #pb1.pack(expand=True)
 
 #process(year,month)
@@ -221,7 +223,7 @@ yearEntry.grid(column=0,row=1,padx=10,pady=10)
 monthLbl.grid(column=1,row=0,padx=10,pady=10)
 monthEntry.grid(column=1,row=1,padx=10,pady=10)
 B_Generate.grid(column=2,row=2,padx=10,pady=10)
-pb1.grid(row=3)
-pb1['value'] = 0
+
+#pb1['value'] = 0
 
 root.mainloop()
