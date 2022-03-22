@@ -182,8 +182,9 @@ def process(file,year,month):
     pb1['value'] = 100
 
 def mask():
-    pb1['value'] = 10
+    #pb1['value'] = 10
     #get user input
+    pb1.start()
     file = fd.askopenfilename(title='Please Select Source File',initialdir='/C:/Users/patrick.coffey/OneDrive - Flanagan Flooring/Documents/')
     year = yearEntry.get()
     print(year)
@@ -191,6 +192,7 @@ def mask():
     print(month)
     pb1['value'] = 20
     process(file,year,month)
+    pb1.stop()
 
 pd.set_option("display.max_rows", None, "display.max_columns", None)
 #file = fd.askopenfilename(title='Open a file',initialdir='/C:/Users/patrick.coffey/OneDrive - Flanagan Flooring/Documents/')
