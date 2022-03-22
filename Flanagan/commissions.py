@@ -6,6 +6,7 @@
 #finish accounting for source variances
 #handle exceptions such as file is open etc
 #add error notifications (e.g. for abandoned file open/save, format, file validation etc)
+#give suer drop down options for date?
 import pandas as pd
 import tkinter as tk
 from tkinter import ttk
