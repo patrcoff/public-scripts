@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #to do:
 #DONEcreate simple gui for users to feel more secure with than cmd (lol)
 #DONEallow user to input month/year for query
