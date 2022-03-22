@@ -5,6 +5,7 @@
 #DONEcreate query generating function based on user entry
 #finish accounting for source variances
 #handle exceptions such as file is open etc
+#add error notifications (e.g. for abandoned file open/save, format, file validation etc)
 import pandas as pd
 import tkinter as tk
 from tkinter import ttk
