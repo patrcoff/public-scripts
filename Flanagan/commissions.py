@@ -178,7 +178,7 @@ def process(file,year,month):
     items_month.to_excel(writer,'Items This Month')
     cust_month.to_excel(writer,'Customer Summary this Month')
     cust_ytd.to_excel(writer,'Customer Summary YTD')
-    pb1['value'] = 95
+    #pb1['value'] = 95
     writer.save()
 
     print("Completed!")
