@@ -1,0 +1,153 @@
+1648226474940	geckodriver	INFO	Listening on 127.0.0.1:19313
+1648226478241	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "19314" "-no-remote" "-profile" "C:\\Users\\PATRIC~1.COF\\AppData\\Local\\Temp\\rust_mozprofilemmbML2"
+1648226478593	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\patrick.coffey\\AppData\\Local\\Temp\\rust_mozprofilemmbML2\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:19314/devtools/browser/2180b649-0b83-4e8a-b99f-fe41d8681d87
+1648226481003	Marionette	INFO	Listening on port 19319
+1648226481412	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1648226592658	Marionette	INFO	Stopped listening on port 19319
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1648226806308	geckodriver	INFO	Listening on 127.0.0.1:19491
+1648226809594	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "19492" "-no-remote" "-profile" "C:\\Users\\PATRIC~1.COF\\AppData\\Local\\Temp\\rust_mozprofilerbC4fk"
+1648226809917	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\patrick.coffey\\AppData\\Local\\Temp\\rust_mozprofilerbC4fk\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:19492/devtools/browser/62a2e21c-720b-43af-b280-f0771da2607f
+1648226812408	Marionette	INFO	Listening on port 19498
+1648226812782	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1648226849236	Marionette	INFO	Stopped listening on port 19498
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1648226903444	geckodriver	INFO	Listening on 127.0.0.1:19624
+1648226906770	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "19625" "-no-remote" "-profile" "C:\\Users\\PATRIC~1.COF\\AppData\\Local\\Temp\\rust_mozprofile4gzrOi"
+1648226907093	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\patrick.coffey\\AppData\\Local\\Temp\\rust_mozprofile4gzrOi\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:19625/devtools/browser/b720c2aa-eb89-496b-a72a-a4d495df0f1e
+1648226909402	Marionette	INFO	Listening on port 19632
+1648226909430	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1648227097639	Marionette	INFO	Stopped listening on port 19632
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1648227103564	geckodriver	INFO	Listening on 127.0.0.1:19772
+1648227106862	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "19773" "-no-remote" "-profile" "C:\\Users\\PATRIC~1.COF\\AppData\\Local\\Temp\\rust_mozprofile5k8Zis"
+1648227107195	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\patrick.coffey\\AppData\\Local\\Temp\\rust_mozprofile5k8Zis\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:19773/devtools/browser/3ca4da2b-17d3-4017-8e08-4131a2176663
+1648227109713	Marionette	INFO	Listening on port 19780
+1648227110074	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1648227195576	Marionette	INFO	Stopped listening on port 19780
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+?" (new NotFoundError("Could not open the file at C:\\Users\\patrick.coffey\\AppData\\Local\\Temp\\rust_mozprofileZMW35D\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:19844/devtools/browser/016d5af1-9548-459f-aec9-63e511297f3e
+1648227157471	Marionette	INFO	Listening on port 19851
+1648227157749	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+1648228893166	Marionette	INFO	Stopped listening on port 19851
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+[Parent 8340, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_InsertNewFocusActionId) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+ port 19970
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+?" (new NotFoundError("Could not open the file at C:\\Users\\patrick.coffey\\AppData\\Local\\Temp\\rust_mozprofileOi1zIk\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:20037/devtools/browser/50e07467-08f1-4373-ac9e-bd662f365709
+1648227341660	Marionette	INFO	Listening on port 20043
+1648227341905	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1648227421878	Marionette	INFO	Stopped listening on port 20043
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+(void 0)))
+DevTools listening on ws://localhost:20111/devtools/browser/2ed5cc1b-a1c5-4716-b924-e341983246ef
+1648227403935	Marionette	INFO	Listening on port 20119
+1648227404291	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1648227412072	Marionette	INFO	Stopped listening on port 20119
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1648227562003	geckodriver	INFO	Listening on 127.0.0.1:20253
+1648227565273	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "20254" "-no-remote" "-profile" "C:\\Users\\PATRIC~1.COF\\AppData\\Local\\Temp\\rust_mozprofile4lD4s2"
+1648227565594	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\patrick.coffey\\AppData\\Local\\Temp\\rust_mozprofile4lD4s2\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:20254/devtools/browser/4b778c13-be51-42ca-842b-22d27b297f24
+1648227568308	Marionette	INFO	Listening on port 20262
+1648227568472	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1648227676746	Marionette	INFO	Stopped listening on port 20262
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+?" (new NotFoundError("Could not open the file at C:\\Users\\patrick.coffey\\AppData\\Local\\Temp\\rust_mozprofileoHeKPv\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:20363/devtools/browser/8e875379-4291-4ba6-891d-f51c29c8f524
+1648227665253	Marionette	INFO	Listening on port 20371
+1648227665311	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1648227674347	Marionette	INFO	Stopped listening on port 20371
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1648227706418	geckodriver	INFO	Listening on 127.0.0.1:20454
+1648227709707	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "20455" "-no-remote" "-profile" "C:\\Users\\PATRIC~1.COF\\AppData\\Local\\Temp\\rust_mozprofileiaxe1c"
+1648227710026	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\patrick.coffey\\AppData\\Local\\Temp\\rust_mozprofileiaxe1c\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:20455/devtools/browser/572e0dfc-2c35-4e14-b9c1-e4ac7cf2e2ee
+1648227712456	Marionette	INFO	Listening on port 20461
+1648227712893	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://horizon.akixi.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1648228893093	Marionette	INFO	Stopped listening on port 20461
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_InsertNewFocusActionId) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_InsertNewFocusActionId) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_InsertNewFocusActionId) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_InsertNewFocusActionId) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
+
