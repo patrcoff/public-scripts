@@ -35,7 +35,7 @@ class Finder:
             for entry in entries:
                 #if filetype is in [list of files which are read line by line
                 count = 0
-                line_num = 0
+                line_num = 1
                 first = None#first occurence of search term (still to decide on what data type this will be)
                 last = None#last occurence of search term (still to decide on what data type this will be)
                 try:
@@ -53,7 +53,8 @@ class Finder:
 
                 except:
                     print("code not written yet for exceptions")
-                results.append({'filename':entry,'first_occurence':first,'last_occurence':last,'count':count,'filetype':"NEED TO CHECK"})
+                if first:
+                    results.append({'filename':entry,'first_occurence':first,'last_occurence':last,'count':count,'filetype':"NEED TO CHECK"})
         #search results get saved to datafile if exists and then returned
         #id for saving to datafile is timestamp
         timestamp = str(datetime.now())
@@ -105,6 +106,9 @@ where
 """
 
 if __name__ == "__main__":
+
+
+
 
     #new script pseudo-code
 
